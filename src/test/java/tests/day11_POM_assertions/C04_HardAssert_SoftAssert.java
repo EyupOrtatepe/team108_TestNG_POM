@@ -2,6 +2,7 @@ package tests.day11_POM_assertions;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class C04_HardAssert_SoftAssert {
 
@@ -18,10 +19,13 @@ public class C04_HardAssert_SoftAssert {
         /*
 
          */
+        SoftAssert softAssert = new SoftAssert();
 
-        Assert.assertTrue(5>8);
-        Assert.assertFalse(9==8);
-        Assert.assertEquals(5,8);
-        Assert.assertNotEquals(6,6);
+        softAssert.assertTrue(5>8, "true testi failed");
+        softAssert.assertFalse(8==8, "false testi passed");
+        softAssert.assertEquals(5,8);
+        softAssert.assertNotEquals(6,6);
+
+        softAssert.assertAll();
     }
 }
