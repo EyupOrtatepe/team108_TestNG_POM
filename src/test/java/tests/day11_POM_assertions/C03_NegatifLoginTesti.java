@@ -20,7 +20,7 @@ public class C03_NegatifLoginTesti {
 
     @Test
     public void negatifLogin1(){
-
+        qdPage = new QdPage();
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
         qdPage.ilkLoginLinki.click();
         qdPage.emailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));
@@ -30,7 +30,7 @@ public class C03_NegatifLoginTesti {
         Assert.assertTrue(qdPage.emailKutusu.isEnabled());
         Driver.closeDriver();
     }
-    @Test
+    @Test(groups = {"smoke","mr1"})
     public void negatifLogin2(){
         qdPage = new QdPage();
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
@@ -42,7 +42,7 @@ public class C03_NegatifLoginTesti {
         Assert.assertTrue(qdPage.emailKutusu.isEnabled());
         Driver.closeDriver();
     }
-    @Test
+    @Test(groups = "smoke")
     public void negatifLogin3(){
         qdPage = new QdPage();
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));

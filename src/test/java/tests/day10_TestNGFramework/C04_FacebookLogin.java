@@ -5,12 +5,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.FacebookPage;
 import utilities.Driver;
-import utilities.ReuseableMethods;
+import utilities.ReusableMethods;
 
 public class C04_FacebookLogin {
 
 
-    @Test
+    @Test(groups = "smoke")
     public void facebookTesti(){
         FacebookPage facebookPage = new FacebookPage();
 
@@ -29,13 +29,13 @@ public class C04_FacebookLogin {
         facebookPage.emailKutusu.sendKeys(faker.internet().emailAddress());
         facebookPage.passwordKutusu.sendKeys(faker.internet().password());
 
-        ReuseableMethods.bekle(3);
+        ReusableMethods.bekle(3);
 
         facebookPage.loginButonu.click();
         //4- Basarili giris yapilamadigini test edin
         Assert.assertTrue(facebookPage.girisYapilamadiElementi.isDisplayed());
 
-        ReuseableMethods.bekle(3);
+        ReusableMethods.bekle(3);
 
         Driver.closeDriver();
 
