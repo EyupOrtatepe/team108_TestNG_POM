@@ -16,8 +16,8 @@ public class AmazonPage {
         @FindBy notasyonunun Driver classindaki webDriver i kullanabilmesi icin
         bu class a tanitmak gerekiyor.
 
-        Bunun icinher pages sayfasi ilk olusturuldugunda basinda parametresiz constructor
-        olusturup icersinde driveri bu classa tanititiyoruz.
+        Bunun icin her pages sayfasi ilk olusturuldugunda basinda parametresiz constructor
+        olusturup icerisinde driveri bu classa tanitiyoruz.
      */
 
 

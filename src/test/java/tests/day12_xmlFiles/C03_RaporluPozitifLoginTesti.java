@@ -24,8 +24,8 @@ public class C03_RaporluPozitifLoginTesti extends TestBaseRapor {
 
         //gecerli kullanici adi ve password ile giris yapin
         qdPage.emailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));
-        extentTest.info("gecerli emIL YAZILDI");
-        qdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecersliPassword"));
+        extentTest.info("gecerli email YAZILDI");
+        qdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecerliPassword"));
         extentTest.info("gecerli password yazildi");
         qdPage.loginButonu.click();
         extentTest.info("logine tiklandi");
