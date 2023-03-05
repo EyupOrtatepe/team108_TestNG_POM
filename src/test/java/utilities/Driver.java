@@ -10,16 +10,11 @@ import org.openqa.selenium.safari.SafariDriver;
 import java.time.Duration;
 
 public class Driver {
-
-    private Driver(){
-
-    }
-
+    private Driver(){}
     // daha fazla kontrol imkani ve extends kullanmadan drivera ulasmak icin
     // webdriver objesini Driver classindaki static bir method ile olusturacagiz.
 
     public static WebDriver driver;
-
     public static WebDriver getDriver(){
 
         String istenenBrowser = ConfigReader.getProperty("browser");
@@ -44,37 +39,23 @@ public class Driver {
                 default:
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
-
             }
-
-
-
-
-
-
         }
-
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
         return driver;
     }
-
     public static void closeDriver(){
         if (driver != null){
             driver.close();
             driver=null;
         }
-
     }
     public static void quitDriver(){
         if (driver != null){
             driver.quit();
             driver=null;
         }
-
     }
-
-
-
 }

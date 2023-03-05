@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="amazon testleri calistir">
+    <test name="mini smoke">
+        <classes>
+            <class name="tests.Practice.D26_AmazonHucreTesti">
+                <methods>
+                    <exclude name="hucreTesti"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    
+    
+</suite>

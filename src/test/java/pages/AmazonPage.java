@@ -1,6 +1,9 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
@@ -36,4 +39,26 @@ public class AmazonPage {
 
     @FindBy(xpath = "//span[@id='productTitle']")
     public WebElement ilkUrunIsmi;
+
+    public void amazonGoToEnd (){
+
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.END).perform();
+
+    }
+    public String getCellText(int satirNo, int sutunNo){
+
+
+        String xpath = "//tr[" + satirNo + "]/td[" + sutunNo + "]";
+
+
+        String cellText = Driver.getDriver().findElement(By.xpath(xpath)).getText();
+
+        return cellText;
+
+    }
+
+
 }
+
+
